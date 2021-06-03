@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, TouchableOp
 import { Feather } from '@expo/vector-icons';
 
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
     const image1 = {
         uri: "https://images.pexels.com/photos/1830937/pexels-photo-1830937.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     }
@@ -19,11 +19,11 @@ const Home = ({navigation}) => {
         { image: { uri: 'https://images.pexels.com/photos/6152120/pexels-photo-6152120.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }, title: 'Florida', key: '5' },
     ]);
 
-   
+
     return (
         <View style={{ flexGrow: 1, height: '100%' }}>
             <View>
-                
+
                 <ImageBackground
                     source={image1}
                     style={{ width: "100%", height: 270 }}
@@ -75,7 +75,7 @@ const Home = ({navigation}) => {
                             }}
                         />
                     </View>
-                    <View style= {{marginBottom: 60}}>
+                    <View style={{ marginBottom: 60 }}>
                         <View style={{ padding: 20, flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text style={{ fontSize: 22, fontWeight: 'bold' }}>
                                 Recently Viewed
@@ -88,18 +88,18 @@ const Home = ({navigation}) => {
                             source={recentImage}
                             style={{ width: "92%", height: 750, borderRadius: 10, alignSelf: "center" }}
                         />
-                        <View style = {{position: "absolute", bottom: 0, padding: 16}}>
-                            <View style = {{flexDirection: 'row', }}>
+                        <View style={{ position: "absolute", bottom: 0, padding: 16 }}>
+                            <View style={{ flexDirection: 'row', }}>
                                 <Feather name='map-pin'
-                                color= "white"
-                                size= {20}
-                                style= {{marginLeft: 10, position: "relative", top: 4}}
+                                    color="white"
+                                    size={20}
+                                    style={{ marginLeft: 10, position: "relative", top: 4 }}
                                 />
-                                <Text style = {{fontSize: 22, color: "white", fontWeight: "normal", marginBottom: 10, marginHorizontal: 10}}>
+                                <Text style={{ fontSize: 22, color: "white", fontWeight: "normal", marginBottom: 10, marginHorizontal: 10 }}>
                                     Florida
                                 </Text>
                             </View>
-                            <Text style = {{fontSize: 14, color: "white", fontWeight: "normal", marginBottom: 4, opacity: 0.9, marginLeft: 16}}>
+                            <Text style={{ fontSize: 14, color: "white", fontWeight: "normal", marginBottom: 4, opacity: 0.9, marginLeft: 16 }}>
                                 Venice, the capital of northern Italy's Veneto Region in the Adriatic Sea
                             </Text>
                         </View>
@@ -110,9 +110,25 @@ const Home = ({navigation}) => {
                         </Text>
                     </View>
                     <View>
-                        <Text>
-                            Contact
-                        </Text>
+
+                        <View style={styles.contactContainer}>
+                            <Text style={styles.caption}>Welcome To Our ARN Travel Journey</Text>
+                            <Text style={styles.TextStyle}>Join With Us And Make Your Journey Enjoyable And Make Your Life Enjoyable</Text>
+
+                            <TextInput style={styles.Input} placeholder='Your Name' type='text' />
+                            <TextInput style={styles.Input} placeholder='Your Email' type='email' />
+                            <TextInput style={styles.Input} placeholder='Your Number' type='number' />
+                            <TextInput style={styles.Message} placeholder='Write Your Message' type='text' />
+                            <TouchableOpacity>
+                                <Text style={styles.text}>
+                                    Send Message
+                                </Text>
+                            </TouchableOpacity>
+
+
+                        </View>
+
+
                     </View>
                 </ScrollView>
             </View>
@@ -182,7 +198,80 @@ const styles = StyleSheet.create({
         fontSize: 14,
         left: 30,
         bottom: 10
-    }
+    },
+//contact
+
+
+contactContainer: {
+    flex: 1,
+    backgroundColor: '#ddd',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop:'50px',
+    
+  },
+  caption:{
+ 
+      fontSize: '25px',
+      fontWeight: '700',
+      fontStyle:'italic',
+      color: '#6374df',
+      marginBottom:'20px'
+
+
+  },
+  TextStyle:{
+ 
+
+      fontSize:' 16px',
+      fontWeight: '500',
+      color: '#2f2d2d',
+      marginBottom:'50px',
+      color: '#969393'
+  
+
+  },
+  Input:{
+    width:'70%',
+    marginTop: '20px',
+    backgroundColor:'#fafafa',
+    padding:'12px',
+    borderRadius: '7px',
+    outline: 'none!',
+    fontSize:'14px',
+    fontStyle:'italic'
+    
+    
+},
+  Message:{
+    width:'70%',
+    marginTop: '20px',
+    backgroundColor:'#fafafa',
+    padding:'12px',
+    borderRadius: '7px',
+    outline: 'none!',
+    fontSize:'14px',
+    fontStyle:'italic',
+    paddingBottom:' 119px'
+    
+
+    
+},
+text:{
+  marginTop: '20px',
+  backgroundColor: '#6274df',
+  color: '#fafafa',
+  paddingTop: '13px ',
+  paddingBottom: '13px',
+  paddingLeft: '74px',
+  paddingRight: '74px',
+  fontSize: '15px',
+  fontWeight: '600',
+  borderRadius: '10px',
+  marginBottom:'50px',
+}
+
+
 
 });
 export default Home;
