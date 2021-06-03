@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ImageBackground, ScrollView, TouchableOpacity, FlatList, TextInput } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import PostDetails from '../PostDetails/PostDetails';
-
 
 
 const Home = ({navigation}) => {
@@ -21,9 +19,7 @@ const Home = ({navigation}) => {
         { image: { uri: 'https://images.pexels.com/photos/6152120/pexels-photo-6152120.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' }, title: 'Florida', key: '5' },
     ]);
 
-    const goToPostDetails = () => {
-        navigation.navigate("PostDetails")
-    }
+   
     return (
         <View style={{ flexGrow: 1, height: '100%' }}>
             <View>
@@ -63,7 +59,7 @@ const Home = ({navigation}) => {
                             renderItem={({ item }) => {
                                 return (
                                     <View style={{ paddingVertical: 20, paddingLeft: 16 }}>
-                                        <TouchableOpacity onPress={goToPostDetails}>
+                                        <TouchableOpacity>
                                             <Image
                                                 source={item.image}
                                                 style={{ width: 150, height: 250, marginRight: 8, borderRadius: 10 }}
@@ -108,12 +104,18 @@ const Home = ({navigation}) => {
                             </Text>
                         </View>
                     </View>
+                    <View>
+                        <Text>
+                            About
+                        </Text>
+                    </View>
+                    <View>
+                        <Text>
+                            Contact
+                        </Text>
+                    </View>
                 </ScrollView>
             </View>
-
-
-
-
         </View>
     );
 }
